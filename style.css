@@ -1,0 +1,162 @@
+/* --- CSS RESET --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Base / Mobile-First Layout --- */
+html,
+body {
+  height: 100%;
+  background-color: #dde7e9;
+}
+
+body {
+  padding: 3%;
+}
+
+main {
+  display: flex;
+  flex-direction: column; /* Stacked vertically for mobile */
+  gap: 3%;
+  min-height: 100%;
+}
+
+aside {
+  background-color: #17252a;
+  color: #ffffff;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers direct children horizontally */
+  justify-content: flex-start;
+  padding: 5%;
+  gap: 2rem;
+}
+
+.content {
+  background-color: #f4f7f8;
+  color: #2b2b2b;
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile {
+  width: 40%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto; /* Forces horizontal centering */
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sidebar-section {
+  width: 100%;
+  text-align: center; /* Centers text inside sidebar for mobile */
+}
+
+.sidebar-section h3,
+.content-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.3rem;
+}
+
+.sidebar-section ul,
+.job ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar-section li,
+.job li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.summary-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4a5568;
+}
+
+.job {
+  margin-bottom: 1rem;
+}
+
+.job-company {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.job-date {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
+
+.education-item {
+  margin-bottom: 1rem;
+}
+
+.language-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.language-list > li {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  text-align: left; /* Aligns text neatly inside the sidebar */
+}
+
+.lang-level {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.stars {
+  font-size: 0.75rem; /* Scales the emojis nicely relative to the text */
+  letter-spacing: -0.1rem; /* Tighter spacing between stars */
+}
+
+/* --- Desktop Layout (Applies on screens wider than 48rem / 768px) --- */
+@media (min-width: 48rem) {
+  main {
+    flex-direction: row; /* Switch back to side-by-side */
+    gap: 2%;
+  }
+
+  aside {
+    width: 30%; /* 30% sidebar width */
+    text-align: left; /* Optional: revert alignment for desktop if preferred */
+  }
+
+  .sidebar-section {
+    text-align: left;
+  }
+
+  .content {
+    width: 75%; /* 70-75% content width */
+  }
+}
